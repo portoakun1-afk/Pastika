@@ -1,5 +1,5 @@
 import BannerCMS from "../components/BannerCMS";
-import CMSSection from "../components/CMSSection";
+import CMSSection from "../components/cmsSection";
 
 function CMS() {
   return (
