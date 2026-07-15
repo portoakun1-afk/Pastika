@@ -47,30 +47,36 @@ function DashboardAdmin() {
     }
   };
 
-  return (
-    <Layout>
-      <h2 className="fw-bold mb-4">Permintaan Belanja</h2>
+return (
+  <Layout>
+    <div className="card shadow-sm border-0">
+      <div className="card-header bg-success text-white">
+        <h4 className="mb-0 fw-bold">Permintaan Belanja</h4>
+      </div>
 
-      <div className="card shadow-sm border-0">
-        <div className="card-body">
-          <table className="table table-bordered table-hover align-middle">
+      <div className="card-body">
+
+        <div className="table-responsive">
+
+          <table className="table table-bordered table-hover align-middle mb-0">
+
             <thead className="table-success">
               <tr>
-                <th width="60">No</th>
+                <th>No</th>
                 <th>Barang</th>
-                <th width="100">Jumlah</th>
-                <th width="100">Satuan</th>
+                <th>Jumlah</th>
+                <th>Satuan</th>
                 <th>Seksi</th>
                 <th>Pemohon</th>
-                <th width="170">Status</th>
-                <th width="170">Aksi</th>
+                <th>Status</th>
+                <th>Aksi</th>
               </tr>
             </thead>
 
             <tbody>
               {request.length === 0 ? (
                 <tr>
-                  <td colSpan="8" className="text-center">
+                  <td colSpan="8" className="text-center py-4">
                     Belum ada permintaan.
                   </td>
                 </tr>
@@ -79,7 +85,9 @@ function DashboardAdmin() {
                   <tr key={r._id}>
                     <td>{index + 1}</td>
 
-                    <td>{r.namaBarang}</td>
+                    <td className="fw-semibold">
+                      {r.namaBarang}
+                    </td>
 
                     <td>{r.jumlah}</td>
 
@@ -91,12 +99,12 @@ function DashboardAdmin() {
 
                     <td>
                       <span
-                        className={`badge ${
+                        className={`badge rounded-pill ${
                           r.status === "Menunggu"
                             ? "bg-warning text-dark"
                             : r.status === "Sudah Ada Stok"
-                              ? "bg-primary"
-                              : "bg-success"
+                            ? "bg-primary"
+                            : "bg-success"
                         }`}
                       >
                         {r.status}
@@ -106,14 +114,14 @@ function DashboardAdmin() {
                     <td>
                       {r.status === "Menunggu" ? (
                         <button
-                          className="btn btn-success btn-sm"
+                          className="btn btn-success btn-sm w-100"
                           onClick={() => selesaiBelanja(r._id)}
                         >
                           Sudah Dibeli
                         </button>
                       ) : (
                         <button
-                          className="btn btn-danger btn-sm"
+                          className="btn btn-outline-danger btn-sm w-100"
                           onClick={() => hapusRequest(r._id)}
                         >
                           Hapus
@@ -124,11 +132,15 @@ function DashboardAdmin() {
                 ))
               )}
             </tbody>
+
           </table>
+
         </div>
+
       </div>
-    </Layout>
-  );
+    </div>
+  </Layout>
+);
 }
 
 export default DashboardAdmin;
