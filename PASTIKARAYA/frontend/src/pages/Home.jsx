@@ -76,7 +76,7 @@ function Home() {
       {/* ================= INFORMASI ================= */}
 
       <section className="container py-5" id="informasi">
-        <h2 className="fw-bold text-center mb-5">Informasi PASTIKAaaa</h2>
+        <h2 className="fw-bold text-center mb-5">Informasi PASTIKA</h2>
 
         {informasi.map((item) => (
           <div
