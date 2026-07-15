@@ -69,7 +69,7 @@ function Navbar() {
                 to="/login"
                 className="btn btn-success px-4"
               >
-                <i className="bi bi-box-arrow-in-right me-2"></i>
+                <i className="bi bi-box-arrow-in-light me-2"></i>
                 Masuk
               </Link>
             </li>
