@@ -41,7 +41,7 @@ function Navbar() {
         </button>
 
         <div
-          className="collapse navbar-collapse"
+          className="collapse navbar-collapse"  
           id="navbarMenu"
         >
           <ul className="navbar-nav ms-auto align-items-lg-center">
