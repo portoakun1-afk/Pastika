@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../api/api";
 import { useAuth } from "../context/authContext";
+import logo from "../assets/logo-pastika.png";
 
 function Login() {
   const navigate = useNavigate();
@@ -45,27 +46,39 @@ function Login() {
 
   return (
     <div
-      className="container d-flex justify-content-center align-items-center"
+      className="container-fluid bg-light d-flex justify-content-center align-items-center px-3"
       style={{ minHeight: "100vh" }}
     >
       <div
-        className="card shadow border-0"
+        className="card shadow border-0 w-100"
         style={{
-          width: "100%",
-          maxWidth: "430px",
+          maxWidth: "420px",
           borderRadius: "18px",
         }}
       >
-        <div className="card-body p-5">
+        <div className="card-body p-4 p-md-5">
 
-          <h2 className="fw-bold text-center mb-4">
-            Login PASTIKA
-          </h2>
+          <div className="text-center mb-4">
+            <img
+              src={logo}
+              alt="PASTIKA"
+              width="80"
+              className="mb-3 img-fluid"
+            />
+
+            <h3 className="fw-bold mb-1">
+              Login PASTIKA
+            </h3>
+
+            <small className="text-muted">
+              Sistem Persediaan ATK Lapas Narkotika Kelas IIA Pematangsiantar
+            </small>
+          </div>
 
           <form onSubmit={handleSubmit}>
 
             <div className="mb-3">
-              <label className="form-label">
+              <label className="form-label fw-semibold">
                 Username
               </label>
 
@@ -80,7 +93,7 @@ function Login() {
             </div>
 
             <div className="mb-4">
-              <label className="form-label">
+              <label className="form-label fw-semibold">
                 Password
               </label>
 
@@ -95,10 +108,18 @@ function Login() {
             </div>
 
             <button
-              className="btn btn-success w-100"
+              className="btn btn-success w-100 py-2"
               disabled={loading}
             >
               {loading ? "Masuk..." : "Login"}
+            </button>
+
+            <button
+              type="button"
+              className="btn btn-outline-secondary w-100 mt-2"
+              onClick={() => navigate("/")}
+            >
+              Kembali ke Beranda
             </button>
 
           </form>
