@@ -4,11 +4,21 @@ import { useAuth } from "../context/authContext";
 function Sidebar() {
   const { user, logout } = useAuth();
 
+  const closeSidebar = () => {
+    const sidebar = document.getElementById("mobileSidebar");
+
+    if (sidebar && window.bootstrap) {
+      const instance =
+        window.bootstrap.Offcanvas.getInstance(sidebar);
+
+      instance?.hide();
+    }
+  };
+
   return (
     <div
       className="bg-success text-white p-3 h-100"
       style={{
-        width: "260px",
         minHeight: "100vh",
       }}
     >
@@ -23,30 +33,47 @@ function Sidebar() {
       </div>
 
       <ul className="nav flex-column">
+
         {/* ================= ADMIN ================= */}
 
         {user?.role === "admin" && (
           <>
             <li className="nav-item mb-2">
-              <Link className="nav-link text-white" to="/admin">
+              <Link
+                className="nav-link text-white"
+                to="/admin"
+                onClick={closeSidebar}
+              >
                 📝 Permintaan Belanja
               </Link>
             </li>
 
             <li className="nav-item mb-2">
-              <Link className="nav-link text-white" to="/barang">
+              <Link
+                className="nav-link text-white"
+                to="/barang"
+                onClick={closeSidebar}
+              >
                 📦 Master Barang
               </Link>
             </li>
 
             <li className="nav-item mb-2">
-              <Link className="nav-link text-white" to="/riwayat-pengambilan">
+              <Link
+                className="nav-link text-white"
+                to="/riwayat-pengambilan"
+                onClick={closeSidebar}
+              >
                 📋 Riwayat Pengambilan
               </Link>
             </li>
 
             <li className="nav-item mb-2">
-              <Link className="nav-link text-white" to="/cms">
+              <Link
+                className="nav-link text-white"
+                to="/cms"
+                onClick={closeSidebar}
+              >
                 🖼 CMS
               </Link>
             </li>
@@ -58,25 +85,41 @@ function Sidebar() {
         {user?.role === "user" && (
           <>
             <li className="nav-item mb-2">
-              <Link className="nav-link text-white" to="/dashboard">
+              <Link
+                className="nav-link text-white"
+                to="/dashboard"
+                onClick={closeSidebar}
+              >
                 🏠 Dashboard
               </Link>
             </li>
 
             <li className="nav-item mb-2">
-              <Link className="nav-link text-white" to="/pengambilan">
+              <Link
+                className="nav-link text-white"
+                to="/pengambilan"
+                onClick={closeSidebar}
+              >
                 📦 Pengambilan Barang
               </Link>
             </li>
 
             <li className="nav-item mb-2">
-              <Link className="nav-link text-white" to="/request">
+              <Link
+                className="nav-link text-white"
+                to="/request"
+                onClick={closeSidebar}
+              >
                 📝 Permintaan Belanja
               </Link>
             </li>
 
             <li className="nav-item mb-2">
-              <Link className="nav-link text-white" to="/riwayat-pengambilan">
+              <Link
+                className="nav-link text-white"
+                to="/riwayat-pengambilan"
+                onClick={closeSidebar}
+              >
                 📋 Riwayat Pengambilan
               </Link>
             </li>
@@ -84,10 +127,14 @@ function Sidebar() {
         )}
 
         <li className="nav-item mt-4">
-          <button className="btn btn-light w-100" onClick={logout}>
+          <button
+            className="btn btn-light w-100"
+            onClick={logout}
+          >
             Logout
           </button>
         </li>
+
       </ul>
     </div>
   );
