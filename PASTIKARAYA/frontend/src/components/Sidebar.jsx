@@ -6,10 +6,9 @@ function Sidebar() {
 
   return (
     <div
-      className="bg-success text-white p-3"
+      className="bg-success text-white p-3 h-100"
       style={{
-        width: "100%",
-        maxWidth: "260px",
+        width: "260px",
         minHeight: "100vh",
       }}
     >
