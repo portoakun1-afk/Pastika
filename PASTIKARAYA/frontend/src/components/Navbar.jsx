@@ -25,7 +25,7 @@ function Navbar() {
             </h5>
 
             <small>
-              Lapas Narkotika Kelas IIA Pematangsiantar
+              Lapas Narkotika Kelas IIA Pematangsiantarrrrrrrrr
             </small>
           </div>
         </a>

@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 
 import AdminDashboard from "./pages/dashboardAdmin";
-import UserDashboard from "./pages/UserDashboard";
+import UserDashboard from "./pages/userDashboard";
 
 import CMS from "./pages/CMS";
 import Barang from "./pages/barang";
@@ -16,7 +16,7 @@ import Request from "./pages/request";
 import Pengambilan from "./pages/pengambilan";
 import RiwayatPengambilan from "./pages/riwayatPengambilan";
 
-import PrivateRoute from "./routes/PrivateRoute";
+import PrivateRoute from "./routes/privateRoute";
 
 function AppRoutes() {
   const { user, loading } = useAuth();
