@@ -67,9 +67,9 @@ function Navbar() {
             <li className="nav-item ms-lg-3 mt-2 mt-lg-0">
               <Link
                 to="/login"
-                className="btn btn-success px-4"
+                className="btn btn-light px-4"
               >
-                <i className="bi bi-box-arrow-in-light me-2"></i>
+                <i className="bi bi-box-arrow-in-right me-2"></i>
                 Masuk
               </Link>
             </li>
