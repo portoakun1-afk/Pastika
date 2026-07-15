@@ -8,7 +8,8 @@ function Sidebar() {
     <div
       className="bg-success text-white p-3"
       style={{
-        width: "260px",
+        width: "100%",
+        maxWidth: "260px",
         minHeight: "100vh",
       }}
     >
@@ -23,7 +24,6 @@ function Sidebar() {
       </div>
 
       <ul className="nav flex-column">
-
         {/* ================= ADMIN ================= */}
 
         {user?.role === "admin" && (
@@ -85,17 +85,13 @@ function Sidebar() {
         )}
 
         <li className="nav-item mt-4">
-          <button
-            className="btn btn-light w-100"
-            onClick={logout}
-          >
+          <button className="btn btn-light w-100" onClick={logout}>
             Logout
           </button>
         </li>
-
       </ul>
     </div>
   );
 }
 
-export default Sidebar; 
+export default Sidebar;
